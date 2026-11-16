@@ -1,4 +1,4 @@
-# Dependências (só de desenvolvimento: jsdom para os testes)
+# Dependências (só de desenvolvimento: jsdom, pkg — usados pelos testes/build)
 node_modules/
 
 # Logs e artefatos locais
@@ -8,10 +8,17 @@ Thumbs.db
 coverage/
 .nyc_output/
 
+# Intermediários de build (o que é entregue fica em dist/)
+native/src/assets.h
+native/win/kydra.res
+native/win/tmp/
+native/lib/
+*.pdb
+*.obj
+*.o
+
 # Dados do launcher quando ele roda local (nunca entram no repositório)
 kydra-data/
-dist/
-out/
 
 # Ambiente
 .env

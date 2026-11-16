@@ -1,0 +1,39 @@
+/* Recursos do Kydra Launcher (Windows).
+ * Compilado por zig rc → kydra.res e linkado dentro do kydra.exe. */
+
+#include <windows.h>
+
+/* Ícone do app: barra de título, Alt+Tab, Explorador e bandeja. */
+1 ICON "kydra.ico"
+
+/* Metadados que aparecem em Propriedades → Detalhes. */
+1 VERSIONINFO
+FILEVERSION 0, 1, 0, 0
+PRODUCTVERSION 0, 1, 0, 0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE 0x0L
+
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"  /* en-US, Unicode */
+        BEGIN
+            VALUE "CompanyName",      "Kydra"
+            VALUE "FileDescription",  "Kydra Launcher — interface do Horizon (Minecraft em Rust)"
+            VALUE "FileVersion",      "0.1.0.0"
+            VALUE "InternalName",     "kydra"
+            VALUE "LegalCopyright",   "LGPL-3.0-or-later"
+            VALUE "OriginalFilename", "kydra.exe"
+            VALUE "ProductName",      "Kydra Launcher"
+            VALUE "ProductVersion",   "0.1.0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

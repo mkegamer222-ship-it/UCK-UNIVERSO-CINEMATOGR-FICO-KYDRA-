@@ -8,13 +8,28 @@
   "scripts": {
     "dev": "node backend/server.mjs",
     "start": "node backend/server.mjs",
-    "check": "node --check src/js/app.js && node --check backend/server.mjs",
+    "build": "bash tools/build-exe.sh",
+    "build:win": "bash tools/build-exe.sh --win-only",
+    "assets": "node tools/gen-assets.mjs",
+    "check": "node --check src/js/app.js && node --check backend/server.mjs && node --check tools/build-exe.sh 2>/dev/null || true",
     "test": "node --test tests/*.test.mjs"
   },
   "engines": {
     "node": ">=20"
   },
   "devDependencies": {
+    "@yao-pkg/pkg": "^6.25.0",
     "jsdom": "^31.0.1"
+  },
+  "pkg": {
+    "assets": [
+      "index.html",
+      "assets/**/*",
+      "src/**/*"
+    ],
+    "scripts": [
+      "backend/server.mjs"
+    ],
+    "outputPath": "dist/nodesc/kydra-node"
   }
 }

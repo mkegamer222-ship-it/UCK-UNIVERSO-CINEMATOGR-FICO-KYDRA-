@@ -1,0 +1,14 @@
+KYDRA LAUNCHER 0.1.0
+Licença: LGPL-3.0-or-later
+
+O jogo HORIZON (github.com/horizon-rust/horizon) também é LGPL-3.0-or-later.
+Minecraft é marca da Mojang/Microsoft. Este launcher não distribui arquivos do
+jogo: usa a instalação do jogador ou baixa da Mojang com a conta dele.
+
+Interface: HTML/CSS/JS próprios, sem framework. Executável: C compilado com
+zig (github.com/ziglang/zig), servidor HTTP embutido, biblioteca padrão do
+Windows + UCRT.
+
+Fonte completo: native/src/main.c (Windows), native/src/main_posix.c (Linux),
+src/ (interface), tools/ (build). Nenhuma biblioteca de terceiros é linkada
+além do próprio sistema.

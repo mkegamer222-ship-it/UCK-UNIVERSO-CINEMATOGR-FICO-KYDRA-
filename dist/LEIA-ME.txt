@@ -1,0 +1,47 @@
+KYDRA LAUNCHER 0.1.0
+=================================
+
+Interface verde para instalar, preparar e abrir o HORIZON — Minecraft: Java
+Edition 26.3 reescrito em Rust (github.com/horizon-rust/horizon).
+
+COMO USAR (Windows)
+-------------------
+1. Coloque a pasta "win" em qualquer lugar (ex.: C:\Program Files\Kydra).
+2. Dê dois cliques em "kydra.exe".
+3. A interface abre em http://127.0.0.1:8787 no seu navegador.
+4. O ícone fica na BANDEJA do sistema (perto do relógio): clique com o botão
+   direito para Abrir, Parar ou Sair.
+
+Nada para instalar. Nada para baixar. O executável tem a interface inteira
+dentro dele (HTML, CSS, JS, imagens): pode mover, renomear ou copiar o .exe
+que ele continua funcionando do mesmo jeito.
+
+OPÇÕES DE LINHA DE COMANDO (atalho com propriedades → destino)
+-------------------------------------------------------------
+   kydra.exe                 porta padrão (8787) e abre o navegador
+   kydra.exe --port 9000     outra porta
+   kydra.exe --no-open       não abre o navegador
+   kydra.exe --stop          encerra a instância que já está rodando
+   kydra.exe --console       anexa ao console do terminal (para ver o log)
+   kydra.exe --version       mostra a versão
+   kydra.exe --help          este resumo
+
+O QUE ELE FAZ
+-------------
+- Lista as builds publicadas do Horizon com o parity de cada uma.
+- Instala numa pasta própria, remove sem deixar resíduo.
+- Prepara os arquivos do jogo a partir da SUA instalação do Minecraft.
+- Abre o cliente; na página Servidores, hospeda um mundo para os amigos.
+- Não redistribui nada da Mojang e não baixa de espelhos.
+
+SE ALGO DER ERRADO
+------------------
+- "A porta está em uso": já existe um Kydra aberto (ou outro programa na
+  porta). Use o ícone da bandeja ou rode com --port 9000.
+- Nada abre: o navegador padrão pode estar bloqueando. Abra você mesmo
+  http://127.0.0.1:8787
+- Antivírus reclamando: o executável é novo e não tem assinatura digital de
+  código. O hash está em SHA256SUMS; o fonte está em native/ no repositório.
+
+Linux (binário de teste): ./kydra-linux-x64 --port 8787 — serve a mesma
+interface, sem bandeja (o Windows é o alvo do app).

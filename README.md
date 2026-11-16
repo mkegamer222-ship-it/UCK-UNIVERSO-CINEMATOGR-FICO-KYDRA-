@@ -37,12 +37,32 @@ no preview do navegador.
 
 ```bash
 npm start          # sobe a interface + API em http://localhost:8787
-npm test           # 17 testes: rotas, fluxos (jsdom) e contrato do backend
+npm test           # 21 testes: rotas, fluxos (jsdom), contrato do backend e o binário
 npm run check      # sintaxe dos pontos de entrada
 ```
 
 Sem dependências de runtime: só Node 20+. `jsdom` é a única dependência de desenvolvimento
 (usada pelos testes).
+
+## O executável
+
+```bash
+tools/build-exe.sh     # → dist/win/kydra.exe  (~600 KB, Windows x64)
+```
+
+`dist/win/kydra.exe` é o app: a interface inteira vai **embutida** no binário (HTML, CSS, JS,
+imagens e catálogo), então ele roda com dois cliques, sem instalar Node, sem pasta auxiliar.
+Ícone na bandeja, instância única, `--port`, `--stop`, `--console`. Precisa de `zig` para
+compilar (`pip install --break-system-packages ziglang`) e de nada além do Windows para rodar —
+detalhes em [`docs/NATIVO.md`](docs/NATIVO.md).
+
+A pasta `dist/` sai organizada:
+
+```
+dist/LEIA-ME.txt  LICENCA.txt  SHA256SUMS
+dist/win/kydra.exe  kydra.ico  PROPS.txt
+dist/linux/kydra-linux-x64   (mesmo núcleo, para testar sem Windows)
+```
 
 **Backend em Rust (opcional):** `cd backend-rust && cargo run --release` serve exatamente o mesmo
 contrato (`docs/API.md`) e o mesmo catálogo, sem nenhuma dependência de crate.
@@ -84,12 +104,26 @@ contrato (`docs/API.md`) e o mesmo catálogo, sem nenhuma dependência de crate.
 ├── backend-rust/
 │   ├── Cargo.toml
 │   └── src/main.rs         # o mesmo contrato, em Rust, sem dependências
+├── native/
+│   ├── src/main.c          # app Windows: bandeja, sockets, instância única
+│   ├── src/server_core.c   # rotas da API + assets embutidos (compartilhado)
+│   ├── src/server_platform.c
+│   ├── src/posix_main.c    # casca Linux (testa o mesmo núcleo)
+│   └── win/kydra.rc|.ico   # ícone e VERSIONINFO do .exe
+├── tools/
+│   ├── gen-assets.mjs      # embute a interface em C (assets.h)
+│   ├── build-exe.sh        # zig → dist/win/kydra.exe
+│   ├── pe-subsystem.mjs    # marca o PE como app de janela (sem console)
+│   └── package-dist.mjs    # monta a pasta dist/ com LEIA-ME, hashes, PROPS
+├── dist/                   # o que é entregue (binário + docs de uso)
 ├── tests/
 │   ├── smoke.test.mjs      # rotas, instalação, conta, ajustes, servidores…
-│   └── backend.test.mjs    # catálogo único + contrato Node/Rust + HTTP real
+│   ├── backend.test.mjs    # catálogo único + contrato Node/Rust + HTTP real
+│   └── native.test.mjs     # binário isolado: serve a interface de dentro de si
 ├── docs/                   # a memória escrita do projeto
 │   ├── ARCHITECTURE.md     # camadas, fluxo de dados, por que assim
 │   ├── API.md              # contrato HTTP entre interface e backend
+│   ├── NATIVO.md           # como o .exe é feito, build, distribuição, segurança
 │   ├── HORIZON.md          # o que é o Horizon, como o launcher o alimenta
 │   └── ROADMAP.md          # próximos passos do Kydra
 └── design/

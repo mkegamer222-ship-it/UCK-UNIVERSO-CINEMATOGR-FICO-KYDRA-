@@ -1,0 +1,11 @@
+kydra.exe — Kydra Launcher 0.1.0
+
+Formato      PE32+ (x86-64)
+Máquina      x86-64
+Subsistema   GUI (2) — sem console
+Tamanho      621568 bytes (607 KB)
+SHA-256      da3d90cd22c452cfe7b8b138ea66e8840f3b0818b1a0fcd58a1b2994f572b573
+Assinatura   nenhuma (build local; ver SHA256SUMS)
+
+Conteúdo embutido: index.html, src/ (JS + CSS), assets/ (arte), ícone e
+VERSIONINFO. O executável não lê nada do disco além de si mesmo.
