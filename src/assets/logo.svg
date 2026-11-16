@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Kydra">
+  <defs>
+    <linearGradient id="kydraShield" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#7bfbb0"/>
+      <stop offset="0.5" stop-color="#3ee07f"/>
+      <stop offset="1" stop-color="#127a43"/>
+    </linearGradient>
+    <linearGradient id="kydraSheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#kydraShield)" d="M32 3.5 57 12.6v19.2c0 13.7-10.2 24.4-25 28.7C17.2 56.2 7 45.5 7 31.8V12.6z"/>
+  <path fill="url(#kydraSheen)" d="M32 3.5 57 12.6v9.1C45 26 20 28 7 21.7v-9.1z"/>
+  <g fill="none" stroke="#04120a" stroke-width="5.5" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M23.5 19.5v25"/>
+    <path d="M41.5 19.5 26.5 32l15 12.5"/>
+  </g>
+</svg>

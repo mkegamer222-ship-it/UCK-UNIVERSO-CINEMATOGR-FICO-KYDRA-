@@ -1,0 +1,18 @@
+# Dependências (só de desenvolvimento: jsdom para os testes)
+node_modules/
+
+# Logs e artefatos locais
+*.log
+.DS_Store
+Thumbs.db
+coverage/
+.nyc_output/
+
+# Dados do launcher quando ele roda local (nunca entram no repositório)
+kydra-data/
+dist/
+out/
+
+# Ambiente
+.env
+.env.local

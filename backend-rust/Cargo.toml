@@ -1,0 +1,11 @@
+[package]
+name = "kydra-backend"
+version = "0.1.0"
+edition = "2021"
+license = "LGPL-3.0-or-later"
+description = "Backend do Kydra Launcher: serve a interface e a API que conversa com o Horizon (Rust)"
+
+# Sem dependências de propósito: este é o backend de referência, o mesmo contrato
+# de backend/server.mjs. Quando virar produto, troque por axum/hyper e reaproveite
+# os crates do Horizon (horizon-platform, horizon-server-launch).
+[dependencies]

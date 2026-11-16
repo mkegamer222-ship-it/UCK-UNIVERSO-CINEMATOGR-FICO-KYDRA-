@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Kydra Launcher — Design tokens
+   Tema "verde" (aurora / floresta). Fonte única de verdade para cor,
+   tipografia, espaçamento, raio e movimento.
+   Documentação: design/DESIGN.md
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* --- Superfícies ------------------------------------------------------ */
+  --bg-void: #040706;
+  --bg: #070b09;
+  --bg-deep: #050807;
+  --bg-elev: #0a100d;
+  --bg-elev-2: #0e1512;
+  --bg-sidebar: rgba(6, 10, 8, 0.72);
+  --bg-glass: rgba(12, 19, 16, 0.66);
+
+  /* --- Traços ----------------------------------------------------------- */
+  --line: rgba(255, 255, 255, 0.065);
+  --line-soft: rgba(255, 255, 255, 0.035);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --line-accent: rgba(62, 224, 127, 0.32);
+
+  /* --- Texto ------------------------------------------------------------ */
+  --text: #eef5f0;
+  --text-soft: #c3d1c8;
+  --text-dim: #92a49a;
+  --text-mute: #63756b;
+  --text-inverse: #04110a;
+
+  /* --- Verde Kydra ------------------------------------------------------ */
+  --accent: #3ee07f;
+  --accent-bright: #6df7a5;
+  --accent-deep: #1d9d57;
+  --accent-ink: #08281a;
+  --accent-08: rgba(62, 224, 127, 0.08);
+  --accent-12: rgba(62, 224, 127, 0.12);
+  --accent-18: rgba(62, 224, 127, 0.18);
+  --accent-30: rgba(62, 224, 127, 0.3);
+  --accent-glow: 0 0 0 1px rgba(62, 224, 127, 0.35), 0 10px 40px -12px rgba(62, 224, 127, 0.55);
+  --teal: #2fd6b0;
+  --lime: #a8e05f;
+
+  /* --- Semânticas ------------------------------------------------------- */
+  --warn: #f0c65c;
+  --danger: #f2706b;
+  --info: #6fb3ff;
+
+  /* --- Gradientes ------------------------------------------------------- */
+  --grad-accent: linear-gradient(180deg, #4dea8c 0%, #25c96c 100%);
+  --grad-accent-soft: linear-gradient(180deg, rgba(62, 224, 127, 0.16), rgba(62, 224, 127, 0.05));
+  --grad-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.008));
+  --grad-hero-fade: linear-gradient(90deg, rgba(5, 8, 7, 0.97) 0%, rgba(5, 8, 7, 0.86) 38%, rgba(5, 8, 7, 0.35) 72%, rgba(5, 8, 7, 0.1) 100%);
+
+  /* --- Tipografia ------------------------------------------------------- */
+  --font-sans: "Inter", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+    "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, SFMono-Regular,
+    Menlo, Consolas, monospace;
+
+  --fs-hero: clamp(44px, 6.2vw, 76px);
+  --fs-title: 38px;
+  --fs-h2: 22px;
+  --fs-h3: 16px;
+  --fs-body: 14px;
+  --fs-sm: 13px;
+  --fs-xs: 11.5px;
+  --fs-micro: 10.5px;
+
+  --tracking-micro: 0.13em;
+  --tracking-tight: -0.022em;
+
+  /* --- Espaçamento (escala 4px) ---------------------------------------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+  --s-8: 40px;
+  --s-9: 56px;
+  --s-10: 72px;
+
+  /* --- Raios ------------------------------------------------------------ */
+  --r-xs: 5px;
+  --r-sm: 8px;
+  --r-md: 11px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-full: 999px;
+
+  /* --- Sombras ---------------------------------------------------------- */
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --shadow-2: 0 18px 50px -28px rgba(0, 0, 0, 0.9);
+  --shadow-3: 0 30px 90px -40px rgba(0, 0, 0, 0.95);
+  --shadow-pop: 0 24px 70px -20px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--line-strong);
+
+  /* --- Movimento -------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 120ms var(--ease);
+  --t-med: 220ms var(--ease);
+  --t-slow: 420ms var(--ease);
+
+  /* --- Layout ----------------------------------------------------------- */
+  --sidebar-w: 236px;
+  --page-max: 1080px;
+  --gutter: clamp(24px, 4vw, 56px);
+  --header-h: 56px;
+}
+
+/* Tema claro opcional (Settings → Aparência). O tema verde continua sendo o
+   padrão do produto; o claro existe para quem joga de dia. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-void: #f4f7f4;
+  --bg: #fbfdfb;
+  --bg-deep: #eef2ee;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #f3f7f3;
+  --bg-sidebar: rgba(255, 255, 255, 0.78);
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --line: rgba(9, 30, 18, 0.1);
+  --line-soft: rgba(9, 30, 18, 0.05);
+  --line-strong: rgba(9, 30, 18, 0.2);
+  --text: #0b1a11;
+  --text-soft: #25382c;
+  --text-dim: #55685c;
+  --text-mute: #7b8b81;
+  --accent: #14934b;
+  --accent-bright: #0f7c3e;
+  --accent-ink: #04120a;
+  --accent-08: rgba(20, 147, 75, 0.08);
+  --accent-12: rgba(20, 147, 75, 0.12);
+  --accent-18: rgba(20, 147, 75, 0.18);
+  --grad-accent: linear-gradient(180deg, #1aa457 0%, #14874a 100%);
+  --grad-hero-fade: linear-gradient(90deg, rgba(251, 253, 251, 0.98) 0%, rgba(251, 253, 251, 0.9) 40%, rgba(251, 253, 251, 0.42) 76%, rgba(251, 253, 251, 0.15) 100%);
+  --shadow-2: 0 18px 44px -30px rgba(9, 30, 18, 0.45);
+}

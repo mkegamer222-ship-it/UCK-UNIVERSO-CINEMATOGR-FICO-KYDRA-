@@ -1,0 +1,20 @@
+{
+  "name": "kydra-launcher",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kydra Launcher — interface verde para instalar, preparar e iniciar builds do Horizon (Minecraft: Java Edition em Rust).",
+  "type": "module",
+  "license": "LGPL-3.0-or-later",
+  "scripts": {
+    "dev": "node backend/server.mjs",
+    "start": "node backend/server.mjs",
+    "check": "node --check src/js/app.js && node --check backend/server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.1"
+  }
+}

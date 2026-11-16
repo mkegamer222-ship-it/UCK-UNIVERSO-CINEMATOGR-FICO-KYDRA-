@@ -1,0 +1,109 @@
+[
+  {
+    "id": "v20261116",
+    "tag": "nightly",
+    "version": "20261116",
+    "date": "2026-11-16",
+    "sizeBytes": 17283072,
+    "parity": 91,
+    "harnesses": 279,
+    "notes": [
+      "Mod API do Horizon integrada ao launcher (pacotes e permissões).",
+      "Servidor dedicado com modo single-player na thread do servidor.",
+      "Correções de parity em comandos /loot e /give para inventário cheio."
+    ]
+  },
+  {
+    "id": "v20261115",
+    "tag": "nightly",
+    "version": "20261115",
+    "date": "2026-11-15",
+    "sizeBytes": 17199616,
+    "parity": 90,
+    "harnesses": 276,
+    "notes": [
+      "Launcher sem nomes, ícones e chaves do fork antigo.",
+      "Licença do projeto passa a LGPL-3.0-or-later.",
+      "Novos harnesses diferenciais para biomas e luz do céu."
+    ]
+  },
+  {
+    "id": "v20261113",
+    "tag": "nightly",
+    "version": "20261113",
+    "date": "2026-11-13",
+    "sizeBytes": 16908288,
+    "parity": 88,
+    "harnesses": 270,
+    "notes": [
+      "Abertura muda para wgpu no Linux.",
+      "Instâncias com tempo de jogo e última sessão no instances.json."
+    ]
+  },
+  {
+    "id": "v20261110",
+    "tag": "stable",
+    "version": "20261110",
+    "date": "2026-11-10",
+    "sizeBytes": 16777216,
+    "parity": 86,
+    "harnesses": 264,
+    "notes": [
+      "Build estável: testada uma vez por dia antes de publicar.",
+      "Prepare reaproveita jars verificados de outra instalação do Horizon.",
+      "Servidores: backup automático com rollback em update."
+    ]
+  },
+  {
+    "id": "v20261106",
+    "tag": "stable",
+    "version": "20261106",
+    "date": "2026-11-06",
+    "sizeBytes": 16515072,
+    "parity": 84,
+    "harnesses": 258,
+    "notes": [
+      "Modpacks Java: relatório de cobertura por mod (ported / partial / not yet).",
+      "Correções no portal do Nether com chunks ainda carregando."
+    ]
+  },
+  {
+    "id": "v20261030",
+    "tag": "stable",
+    "version": "20261030",
+    "date": "2026-10-30",
+    "sizeBytes": 16121856,
+    "parity": 82,
+    "harnesses": 249,
+    "notes": [
+      "Servidores: painel web e API de controle (horizon-server).",
+      "Tailscale para amigos fora da rede local."
+    ]
+  },
+  {
+    "id": "v20261022",
+    "tag": "stable",
+    "version": "20261022",
+    "date": "2026-10-22",
+    "sizeBytes": 15728640,
+    "parity": 79,
+    "harnesses": 238,
+    "notes": [
+      "Shaders: pipeline de packs com cache de compilação.",
+      "Correções de física de barco e escada."
+    ]
+  },
+  {
+    "id": "v20261012",
+    "tag": "stable",
+    "version": "20261012",
+    "date": "2026-10-12",
+    "sizeBytes": 14680064,
+    "parity": 88,
+    "harnesses": 270,
+    "notes": [
+      "Primeira release pública: reescrita completa em Rust, 88% de parity.",
+      "Instalação por plataforma em pasta própria, remoção sem resíduos."
+    ]
+  }
+]
